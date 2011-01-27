@@ -1,0 +1,623 @@
+##############################################################################
+# PROJECT - EF31S_32K
+# EF31S_32K.pds
+##############################################################################
+
+##############################################################################
+# SECTIONS
+##############################################################################
+SECTION_GROUP
+{
+  SECTION "PHONEINFO"
+  SECTION "KERNEL"
+#  SECTION "SYSTEM"
+ # SECTION "RECOVERY"
+  SECTION "AMSS"
+  SECTION "QCSBL_HDR"
+  SECTION "QCSBL"
+  SECTION "OEMSBL"
+  SECTION "APPSBL"
+}
+
+
+##############################################################################
+# SECTION
+##############################################################################
+SECTION "PHONEINFO"
+{
+  ########################################
+  #---Basic Information ------------------
+  ########################################
+  ID				: 0 #
+  MEMORY_TYPE		: 1 # NAND 0, NOR 1, etc 0x????
+  ADDRESS			: 0x02900000
+  BINARY_FILE		: "$(BIN_PATH)/phoneinfo.bin"
+  BINARY_OFFSET		: 0x0
+  REAL_LENGTH		: 0x0
+  
+  ########################################
+  #---Download Limit---------------------
+  ########################################
+  DIFFERENTIAL		: DISABLE
+  USER				: ENABLE
+  PST				: ENABLE
+  DEVELOPER			: ENABLE
+  MANUFACTURE		: ENABLE
+
+  ########################################
+  #---Size Option------------------------
+  ########################################
+  ERASE_SIZE		: 0x20000
+  WRITE_SIZE		: 0x8000
+  READ_SIZE			: 0x800
+  ALIGN_SIZE		: 0x20000
+  SECTION_MAX_SIZE	: 0x00140000
+
+  ########################################
+  #---HASH Option------------------------
+  ########################################
+  HASH_BUILD		: DISABLE
+  HASH_TYPE			: NONE
+  HASH_OFFSET		: NONE
+
+  ########################################
+  #---Length Option---------------------
+  ########################################
+  LENGTH_OFFSET		: 0x0
+
+  ########################################
+  #---Checksum Option--------------------
+  ########################################
+  CHKSUM_BUILD		: DISABLE
+  CHKSUM_OFFSET		: 0xFFFFFFFF
+
+  ########################################
+  #---Version Option---------------------
+  ########################################
+  VERSION_OFFSET	: 0xFFFFFFFF
+
+  ########################################
+  #---Timeout----------------------------
+  ########################################
+  START_TIMEOUT		: DEFAULT
+  FINISH_TIMEOUT	: DEFAULT
+  ERASE_TIMEOUT		: DEFAULT
+  WRITE_TIMEOUT		: DEFAULT
+  READ_TIMEOUT		: DEFAULT
+}
+
+
+##############################################################################
+# SECTION
+##############################################################################
+SECTION "QCSBL_HDR"
+{
+  ########################################
+  #---Basic Information ------------------
+  ########################################
+  ID				: 1 #
+  MEMORY_TYPE		: 1 # NAND 0, NOR 1, etc 0x????
+  ADDRESS			: 0x00000000
+  BINARY_FILE		: "$(BIN_PATH)/qcsblhd_cfgdata.mbn"
+  BINARY_OFFSET		: 0x0
+  REAL_LENGTH		: 0x0
+  
+  ########################################
+  #---Download Limit---------------------
+  ########################################
+  DIFFERENTIAL		: DISABLE
+  USER				: ENABLE
+  PST				: ENABLE          #chjeon20100525@DS2  OPTIONAL
+  DEVELOPER			: ENABLE
+  MANUFACTURE		: ENABLE
+
+  ########################################
+  #---Size Option------------------------
+  ########################################
+  ERASE_SIZE		: 0x20000
+  WRITE_SIZE		: 0x8000
+  READ_SIZE			: 0x800
+  ALIGN_SIZE		: 0x20000
+
+  SECTION_MAX_SIZE	: 0x180000
+  
+  ########################################
+  #---HASH Option------------------------
+  ########################################
+  HASH_BUILD		: DISABLE
+  HASH_TYPE			: NONE
+  HASH_OFFSET		: NONE
+
+  ########################################
+  #---Length Option---------------------
+  ########################################
+  LENGTH_OFFSET		: 0x0
+
+  ########################################
+  #---Checksum Option--------------------
+  ########################################
+  CHKSUM_BUILD		: DISABLE
+  CHKSUM_OFFSET		: 0xFFFFFFFF
+
+  ########################################
+  #---Version Option---------------------
+  ########################################
+  VERSION_OFFSET	: 0xFFFFFFFF
+
+  ########################################
+  #--Timeout----------------------------
+  ########################################
+  START_TIMEOUT		: DEFAULT
+  FINISH_TIMEOUT	: DEFAULT
+  ERASE_TIMEOUT		: DEFAULT
+  WRITE_TIMEOUT		: DEFAULT
+  READ_TIMEOUT		: DEFAULT  
+}
+
+
+##############################################################################
+# SECTION
+##############################################################################
+SECTION "QCSBL"
+{
+  ########################################
+  #---Basic Information ------------------
+  ########################################
+  ID				: 2 #
+  MEMORY_TYPE		: 1 # NAND 0, NOR 1, etc 0x????
+  ADDRESS			: 0x00240000
+  BINARY_FILE		: "$(BIN_PATH)/qcsbl.bin"
+  BINARY_OFFSET		: 0x0
+  REAL_LENGTH		: 0x0
+  
+  ########################################
+  #---Download Limit---------------------
+  ########################################
+  DIFFERENTIAL		: DISABLE
+  USER				: ENABLE
+  PST				: ENABLE          #chjeon20100525@DS2 OPTIONAL
+  DEVELOPER			: ENABLE
+  MANUFACTURE		: ENABLE
+
+  ########################################
+  #---Size Option------------------------
+  ########################################
+  ERASE_SIZE		: 0x20000
+  WRITE_SIZE		: 0x8000
+  READ_SIZE			: 0x800
+  ALIGN_SIZE		: 0x20000
+  SECTION_MAX_SIZE	: 0x140000
+  
+  ########################################
+  #---HASH Option------------------------
+  ########################################
+  HASH_BUILD		: DISABLE
+  HASH_TYPE			: NONE
+  HASH_OFFSET		: NONE
+
+  ########################################
+  #---Length Option---------------------
+  ########################################
+  LENGTH_OFFSET		: 0x0
+
+  ########################################
+  #---Checksum Option--------------------
+  ########################################
+  CHKSUM_BUILD		: DISABLE
+  CHKSUM_OFFSET		: 0xFFFFFFFF
+
+  ########################################
+  #--Version Option---------------------
+  ########################################
+  VERSION_OFFSET	: 0xFFFFFFFF
+
+  ########################################
+  #--Timeout----------------------------
+  ########################################
+  START_TIMEOUT		: DEFAULT
+  FINISH_TIMEOUT	: DEFAULT
+  ERASE_TIMEOUT		: DEFAULT
+  WRITE_TIMEOUT		: DEFAULT
+  READ_TIMEOUT		: DEFAULT  
+}
+
+
+##############################################################################
+# SECTION
+##############################################################################
+SECTION "OEMSBL"
+{
+  ########################################
+  #---Basic Information ------------------
+  ########################################
+  ID				: 3 #
+  MEMORY_TYPE		: 1 # NAND 0, NOR 1, etc 0x????
+  ADDRESS			: 0x00440000
+  BINARY_FILE		: "$(BIN_PATH)/oemsbl.bin"
+  BINARY_OFFSET		: 0x0
+  REAL_LENGTH		: 0x0
+  
+  ########################################
+  #---Download Limit---------------------
+  ########################################
+  DIFFERENTIAL		: DISABLE
+  USER				: ENABLE
+  PST				: ENABLE         #chjeon20100525@DS2    OPTIONAL
+  DEVELOPER			: ENABLE
+  MANUFACTURE		: ENABLE
+
+  ########################################
+  #--Size Option------------------------
+  ########################################
+  ERASE_SIZE		: 0x20000
+  WRITE_SIZE		: 0x8000
+  READ_SIZE			: 0x800
+  ALIGN_SIZE		: 0x20000
+  SECTION_MAX_SIZE	: 0x180000
+  
+  ########################################
+  #---HASH Option------------------------
+  ########################################
+  HASH_BUILD		: DISABLE
+  HASH_TYPE			: NONE
+  HASH_OFFSET		: NONE
+
+  ########################################
+  #---Length Option---------------------
+  ########################################
+  LENGTH_OFFSET		: 0x0
+
+  ########################################
+  #---Checksum Option--------------------
+  ########################################
+  CHKSUM_BUILD		: DISABLE
+  CHKSUM_OFFSET		: 0xFFFFFFFF
+
+  ########################################
+  #--Version Option---------------------
+  ########################################
+  VERSION_OFFSET	: 0xFFFFFFFF
+
+  ########################################
+  #--Timeout----------------------------
+  ########################################
+  START_TIMEOUT		: DEFAULT
+  FINISH_TIMEOUT	: DEFAULT
+  ERASE_TIMEOUT		: DEFAULT
+  WRITE_TIMEOUT		: DEFAULT
+  READ_TIMEOUT		: DEFAULT
+}
+
+
+##############################################################################
+# SECTION
+##############################################################################
+SECTION "AMSS"
+{
+  ########################################
+  #---Basic Information ------------------
+  ########################################
+  ID				: 4 #
+  MEMORY_TYPE		: 1 # NAND 0, NOR 1, etc 0x????
+  ADDRESS			: 0x00700000
+  BINARY_FILE		: "$(BIN_PATH)/amss.mbn"
+  BINARY_OFFSET		: 0x0
+  REAL_LENGTH		: 0x0
+  
+  ########################################
+  #---Download Limit---------------------
+  ########################################
+  DIFFERENTIAL		: ENABLE
+  USER				: ENABLE
+  PST				: ENABLE
+  DEVELOPER			: ENABLE
+  MANUFACTURE		: ENABLE
+
+  ########################################
+  #---Size Option------------------------
+  ########################################
+  ERASE_SIZE		: 0x20000
+  WRITE_SIZE		: 0x8000
+  READ_SIZE		: 0x0800
+  ALIGN_SIZE		: 0x20000
+  SECTION_MAX_SIZE	: 0x01600000
+
+  ########################################
+  #---HASH Option------------------------
+  ########################################
+  HASH_BUILD		: DISABLE
+  HASH_TYPE			: NONE
+  HASH_OFFSET		: NONE
+
+  ########################################
+  #---Length Option---------------------
+  ########################################
+  LENGTH_OFFSET		: 0x00002000
+
+  ########################################
+  #---Checksum Option--------------------
+  ########################################
+  CHKSUM_BUILD		: ENABLE
+  CHKSUM_OFFSET		: 0x00002004
+
+  ########################################
+  #--Version Option---------------------
+  ########################################
+  VERSION_OFFSET	: 0xFFFFFFFF
+
+  ########################################
+  #--Timeout----------------------------
+  ########################################
+  START_TIMEOUT		: DEFAULT
+  FINISH_TIMEOUT	: DEFAULT
+  ERASE_TIMEOUT		: DEFAULT
+  WRITE_TIMEOUT		: DEFAULT
+  READ_TIMEOUT		: DEFAULT
+}
+
+
+##############################################################################
+# SECTION
+##############################################################################
+SECTION "APPSBL"
+{
+  ########################################
+  #---Basic Information ------------------
+  ########################################
+  ID				: 5 #
+  MEMORY_TYPE		: 1 # NAND 0, NOR 1, etc 0x????
+  ADDRESS		: 0x02700000
+  BINARY_FILE		: "$(BIN_PATH)/appsboot.mbn"
+  BINARY_OFFSET		: 0x0
+  REAL_LENGTH		: 0x0
+  
+  ########################################
+  #---Download Limit---------------------
+  ########################################
+  DIFFERENTIAL		: DISABLE
+  USER				: ENABLE
+  PST				: ENABLE         #OPTIONAL
+  DEVELOPER			: ENABLE
+  MANUFACTURE		: ENABLE
+
+  ########################################
+  #--Size Option------------------------
+  ########################################
+  ERASE_SIZE		: 0x20000
+  WRITE_SIZE		: 0x8000
+  READ_SIZE		: 0x0800
+  ALIGN_SIZE		: 0x20000
+  SECTION_MAX_SIZE	: 0x00140000
+  
+  ########################################
+  #---HASH Option------------------------
+  ########################################
+  HASH_BUILD		: DISABLE
+  HASH_TYPE			: NONE
+  HASH_OFFSET		: NONE
+
+  ########################################
+  #---Length Option---------------------
+  ########################################
+  LENGTH_OFFSET		: 0x0
+
+  ########################################
+  #---Checksum Option--------------------
+  ########################################
+  CHKSUM_BUILD		: DISABLE
+  CHKSUM_OFFSET		: 0xFFFFFFFF
+
+  ########################################
+  #--Version Option---------------------
+  ########################################
+  VERSION_OFFSET	: 0xFFFFFFFF
+
+  ########################################
+  #--Timeout----------------------------
+  ########################################
+  START_TIMEOUT		: DEFAULT
+  FINISH_TIMEOUT	: DEFAULT
+  ERASE_TIMEOUT		: DEFAULT
+  WRITE_TIMEOUT		: DEFAULT
+  READ_TIMEOUT		: DEFAULT
+}
+
+##############################################################################
+# SECTION
+##############################################################################
+SECTION "KERNEL"
+{
+  ########################################
+  #---Basic Information ------------------
+  ########################################
+  ID				: 6 #
+  MEMORY_TYPE		: 1 # NAND 0, NOR 1, etc 0x????
+  ADDRESS		: 0x03840000
+  BINARY_FILE		: "$(BIN_PATH)/boot_nand.img"
+  BINARY_OFFSET		: 0x0
+  REAL_LENGTH		: 0x0
+  
+  ########################################
+  #---Download Limit---------------------
+  ########################################
+  DIFFERENTIAL		: DISABLE
+  USER				: ENABLE
+  PST				: ENABLE          #OPTIONAL
+  DEVELOPER			: ENABLE
+  MANUFACTURE		: ENABLE
+
+  ########################################
+  #--Size Option------------------------
+  ########################################
+  ERASE_SIZE		: 0x21000
+  WRITE_SIZE		: 0x8400
+  READ_SIZE			: 0x840
+  ALIGN_SIZE		: 0x21000
+  SECTION_MAX_SIZE	: 0x00630000	
+  
+  ########################################
+  #---HASH Option------------------------
+  ########################################
+  HASH_BUILD		: DISABLE
+  HASH_TYPE			: NONE
+  HASH_OFFSET		: NONE
+
+  ########################################
+  #---Length Option---------------------
+  ########################################
+  LENGTH_OFFSET		: 0x0
+
+  ########################################
+  #---Checksum Option--------------------
+  ########################################
+  CHKSUM_BUILD		: DISABLE
+  CHKSUM_OFFSET		: 0xFFFFFFFF
+
+  ########################################
+  #--Version Option---------------------
+  ########################################
+  VERSION_OFFSET	: 0xFFFFFFFF
+
+  ########################################
+  #--Timeout----------------------------
+  ########################################
+  START_TIMEOUT		: DEFAULT
+  FINISH_TIMEOUT		: DEFAULT
+  ERASE_TIMEOUT		: DEFAULT
+  WRITE_TIMEOUT		: 10000
+  READ_TIMEOUT			: DEFAULT
+}
+
+
+##############################################################################
+# SECTION
+##############################################################################
+#SECTION "SYSTEM"
+#{
+#  ########################################
+#  #---Basic Information ------------------
+#  ########################################
+#  ID				: 7 #
+#  MEMORY_TYPE		: 1 # NAND 0, NOR 1, etc 0x????
+#  ADDRESS			: 0x04B40000
+#  BINARY_FILE			: "$(BIN_PATH)/system_nand.img"
+#  BINARY_OFFSET		: 0x0
+#  REAL_LENGTH		: 0x0
+#  
+#  ########################################
+#  #---Download Limit---------------------
+#  ########################################
+#  DIFFERENTIAL		: DISABLE
+#  USER				: ENABLE
+#  PST				: ENABLE          #OPTIONAL
+#  DEVELOPER			: ENABLE
+#  MANUFACTURE		: ENABLE
+#
+#  ########################################
+#  #--Size Option------------------------
+#  ########################################
+#  ERASE_SIZE		: 0x21000
+#  WRITE_SIZE		: 0x8400
+#  READ_SIZE			: 0x840
+#  ALIGN_SIZE		: 0x21000
+#  SECTION_MAX_SIZE	: 0x18A74000  
+##  SECTION_MAX_SIZE	: 0x151FE000
+#
+#  ########################################
+#  #---HASH Option------------------------
+#  ########################################
+#  HASH_BUILD		: DISABLE
+#  HASH_TYPE			: NONE
+#  HASH_OFFSET		: NONE
+#
+#  ########################################
+#  #---Length Option---------------------
+#  ########################################
+#  LENGTH_OFFSET		: 0x0
+#
+#  ########################################
+#  #---Checksum Option--------------------
+#  ########################################
+#  CHKSUM_BUILD		: DISABLE
+#  CHKSUM_OFFSET		: 0xFFFFFFFF
+#
+#  ########################################
+#  #--Version Option---------------------
+#  ########################################
+#  VERSION_OFFSET	: 0xFFFFFFFF
+#
+#  ########################################
+#  #--Timeout----------------------------
+#  ########################################
+#  START_TIMEOUT		: DEFAULT
+#  FINISH_TIMEOUT		: DEFAULT
+#  ERASE_TIMEOUT		: DEFAULT
+#  WRITE_TIMEOUT		: 10000
+#  READ_TIMEOUT		: DEFAULT
+#}
+
+##############################################################################
+# SECTION
+##############################################################################
+#SECTION "RECOVERY"
+#{
+#  ########################################
+#  #---Basic Information ------------------
+#  ########################################
+#  ID				: 12 #
+#  MEMORY_TYPE		: 1 # NAND 0, NOR 1, etc 0x????
+#  ADDRESS			: 0x03E40000
+#  BINARY_FILE			: "$(BIN_PATH)/recovery_nand.img"
+#  BINARY_OFFSET		: 0x0
+#  REAL_LENGTH		: 0x0
+#  
+#  ########################################
+#  #---Download Limit---------------------
+#  ########################################
+#  DIFFERENTIAL		: DISABLE
+#  USER				: ENABLE
+#  PST				: ENABLE          #OPTIONAL
+#  DEVELOPER			: ENABLE
+#  MANUFACTURE		: ENABLE
+#
+#  ########################################
+#  #--Size Option------------------------
+#  ########################################
+#  ERASE_SIZE		: 0x21000
+#  WRITE_SIZE		: 0x8400
+#  READ_SIZE			: 0x840
+#  ALIGN_SIZE		: 0x21000
+#  SECTION_MAX_SIZE	: 0x00630000
+#  
+#  ########################################
+#  #---HASH Option------------------------
+#  ########################################
+#  HASH_BUILD		: DISABLE
+#  HASH_TYPE			: NONE
+#  HASH_OFFSET		: NONE
+#
+#  ########################################
+#  #---Length Option---------------------
+#  ########################################
+#  LENGTH_OFFSET		: 0x0
+#
+#  ########################################
+#  #---Checksum Option--------------------
+#  ########################################
+#  CHKSUM_BUILD		: DISABLE
+#  CHKSUM_OFFSET		: 0xFFFFFFFF
+#
+#  ########################################
+#  #--Version Option---------------------
+#  ########################################
+#  VERSION_OFFSET	: 0xFFFFFFFF
+#
+#  ########################################
+#  #--Timeout----------------------------
+#  ########################################
+#  START_TIMEOUT		: DEFAULT
+#  FINISH_TIMEOUT		: DEFAULT
+#  ERASE_TIMEOUT		: DEFAULT
+#  WRITE_TIMEOUT		: 10000
+#  READ_TIMEOUT		: DEFAULT
+#}
